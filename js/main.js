@@ -114,8 +114,8 @@ function newTahrirlash(index) {
 function newItems(editIndex) {
   let numberInput = document.querySelector(".numberInput").value;
   let nameInput = document.querySelector(".nameInput").value;
-  ishlarRoyxati[editIndex] = numberInput;
-  ishlarRoyxati[editIndex] = nameInput;
+  ishlarRoyxati[editIndex].id = numberInput;
+  ishlarRoyxati[editIndex].name = nameInput;
   render(ishlarRoyxati);
 }
 
