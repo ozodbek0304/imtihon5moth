@@ -131,32 +131,26 @@ tahrirlash.addEventListener("click", function newqushish(e) {
   render(ishlarRoyxati)
 });
 
-// function newItems(editIndex) {
-//   let numberInput = document.querySelector(".numberInput").value;
-//   let nameInput = document.querySelector(".nameInput").value;
-//   ishlarRoyxati[editIndex].id = numberInput;
-//   ishlarRoyxati[editIndex].name = nameInput;
-//   render(ishlarRoyxati);
-// }
+
 
 // oltinchi savol
 
 
 
-  // $.ajax("https://api.npoint.io/511e72cd83cab84374d6", {
-  //   success: function (response) {
-  //     response.map((item) => {
-  //       console.log(item);
-  //           const col = `
-  //               <div class="card" style="width: 18rem;">
-  //       <img src="${item.photo}" class=" py-2 " alt="${item.title}">
-  //       <div class=" mb-2 ">
-  //     <h4>${item.id}</h4>
-  //     <p>${item.title}</p>
-  //       </div>
-  //     </div>
-  //            `;
-  //   $(".row_items").append(col);
-  // });
-  //   },
-  // });
+  $.ajax("https://api.npoint.io/511e72cd83cab84374d6", {
+    success: function (response) {
+      response.map((item) => {
+        console.log(item);
+            const col = `
+                <div class="card" style="width: 18rem;">
+        <img src="${item.photo}" class=" py-2 " alt="${item.title}">
+        <div class=" mb-2 ">
+      <h4>${item.id}</h4>
+      <p>${item.title}</p>
+        </div>
+      </div>
+             `;
+    $(".row_items").append(col);
+  });
+    },
+  });
