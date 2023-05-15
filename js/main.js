@@ -74,7 +74,6 @@ function render(data) {
       btn2.setAttribute("data-bs-toggle", "modal");
       btn1.setAttribute("data-bs-target", "#readMoadal");
       btn2.setAttribute("data-bs-target", "#readMoadal");
-      btn1.setAttribute("onclick", `newItems(${index})`);
       btn2.setAttribute("onclick", `newTahrirlash(${index})`);
         btn2.innerText = "Tahrirlash";
         btn3.innerText = "O'chirish";
@@ -108,16 +107,37 @@ function newTahrirlash(index) {
   editIndex = index;
   document.querySelector(".numberInput").value=ishlarRoyxati[index].id;
   document.querySelector(".nameInput").value = ishlarRoyxati[index].name;
-  console.log(index);
-}
+};
 
-function newItems(editIndex) {
-  let numberInput = document.querySelector(".numberInput").value;
-  let nameInput = document.querySelector(".nameInput").value;
-  ishlarRoyxati[editIndex].id = numberInput;
-  ishlarRoyxati[editIndex].name = nameInput;
+let qushish = document.querySelector("#qushish");
+let tahrirlash = document.querySelector("#tahrirlash");
+
+qushish.addEventListener("click", function (e) {
+  e.preventDefault();
+   let id= document.querySelector(".numberInput").value;
+   let name=document.querySelector(".nameInput").value;
+  ishlarRoyxati.push({
+    id: id,
+    name, name,
+  });
   render(ishlarRoyxati);
-}
+
+})
+
+tahrirlash.addEventListener("click", function newqushish(e) {
+  e.preventDefault();
+  ishlarRoyxati[editIndex].id = document.querySelector(".numberInput").value;
+  ishlarRoyxati[editIndex].name = document.querySelector(".nameInput").value;
+  render(ishlarRoyxati)
+});
+
+// function newItems(editIndex) {
+//   let numberInput = document.querySelector(".numberInput").value;
+//   let nameInput = document.querySelector(".nameInput").value;
+//   ishlarRoyxati[editIndex].id = numberInput;
+//   ishlarRoyxati[editIndex].name = nameInput;
+//   render(ishlarRoyxati);
+// }
 
 // oltinchi savol
 
