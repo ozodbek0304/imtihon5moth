@@ -75,7 +75,7 @@ function render(data) {
       btn1.setAttribute("data-bs-target", "#readMoadal");
       btn2.setAttribute("data-bs-target", "#readMoadal");
       btn1.setAttribute("onclick", `newItems(${index})`);
-      btn1.setAttribute("onclick", `newTahrirlash(${index})`);
+      btn2.setAttribute("onclick", `newTahrirlash(${index})`);
         btn2.innerText = "Tahrirlash";
         btn3.innerText = "O'chirish";
 
@@ -106,8 +106,9 @@ let editIndex;
 
 function newTahrirlash(index) {
   editIndex = index;
-  document.querySelector(".numberInput").value=ishlarRoyxati[index];
-  document.querySelector(".nameInput").value=ishlarRoyxati[index]
+  document.querySelector(".numberInput").value=ishlarRoyxati[index].id;
+  document.querySelector(".nameInput").value = ishlarRoyxati[index].name;
+  console.log(index);
 }
 
 function newItems(editIndex) {
